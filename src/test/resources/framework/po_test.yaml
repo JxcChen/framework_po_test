@@ -1,0 +1,9 @@
+data:
+  - selenium
+  - junit
+
+steps:
+  - init: [mainPage,com.framework.page.MainPage]
+  - mainPage.searchPage: []
+  - searchPage: []
+  - searchPage.search: ${data}
