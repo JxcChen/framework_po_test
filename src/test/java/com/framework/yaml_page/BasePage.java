@@ -44,7 +44,7 @@ public class BasePage {
 
 
     /**
-     * 通过反射初始化PO 并将页面存入pages
+     * 通过yaml数据驱动方式 进行初始化页面
      * @param objectName po对象名
      * @param className po全类名
      */
@@ -78,10 +78,8 @@ public class BasePage {
     }
 
     /**
-     * 通过反射机制获取到实际页面的方法 并运行目标方法
+     * 通过数据驱动获取步骤执行测试
      * @param methodName 方法名
-     * @param objectName 对象名
-     * @param args 参数
      */
     public void runStep(String methodName) {
 
