@@ -1,7 +1,6 @@
-package com.framework.testcase;
+package com.framework.testcase_yaml;
 
-import com.framework.page.BasePage;
-
+import com.framework.yaml_page.BasePage;
 
 import java.util.ArrayList;
 
@@ -32,7 +31,7 @@ public class POTestCase extends BaseTestCase {
                 // 方法名
                 String methodName = objectMethod[1];
                 // todo: 调用PO相关方法 执行用例
-                BasePage.getInstance().getPO(objectName).runStep(methodName, objectName, value);
+                BasePage.getInstance().getPO(objectName).runStep(methodName);
             }
             // todo: 进行断言
         });

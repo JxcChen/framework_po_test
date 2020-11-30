@@ -1,6 +1,5 @@
-package com.framework.page;
+package com.framework.reflect_page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package com.framework.testcase;
+package com.framework.testcase_reflect;
 
 import java.util.ArrayList;
 import java.util.HashMap;

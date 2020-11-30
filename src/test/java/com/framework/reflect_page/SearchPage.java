@@ -1,4 +1,4 @@
-package com.framework.page;
+package com.framework.reflect_page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

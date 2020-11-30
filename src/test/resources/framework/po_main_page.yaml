@@ -1,0 +1,9 @@
+init:
+  - chrome: {}
+  - implicitlyWait: 15
+  - get: https://www.baidu.com
+
+searchPage:
+ - find: {name: wd}
+ - click: {}
+ - quit: {}

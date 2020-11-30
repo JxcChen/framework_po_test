@@ -1,0 +1,9 @@
+data:
+  - selenium
+  - junit
+
+steps:
+  - init: [mainPage,po_main_page.yaml]
+  - mainPage.searchPage: []
+#  - searchPage: []
+#  - searchPage.search: ${data}

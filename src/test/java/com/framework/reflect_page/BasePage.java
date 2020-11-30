@@ -1,14 +1,18 @@
-package com.framework.page;
+package com.framework.reflect_page;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
+import com.framework.testcase_yaml.SearchTest;
+import com.framework.testcase_yaml.SeleniumTestCase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.InvocationTargetException;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +23,7 @@ public class BasePage {
     public static BasePage instance = null;
     // 储存所有page对象
     public static HashMap<String,BasePage> pages = new HashMap<>();
+
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -65,12 +70,14 @@ public class BasePage {
      */
     public void initPO(String objectName,String className){
 
+        // 反射用
         try {
             BasePage page = (BasePage) Class.forName(className).newInstance();
             pages.put(objectName,page);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -90,6 +97,7 @@ public class BasePage {
      * @param args 参数
      */
     public void runStep(String methodName,String objectName,ArrayList<String> args) {
+        // 反射运行方法
         try {
             Method runMethod = Arrays.stream(this.getClass().getMethods()).filter(method -> method.getName().equals(methodName)).findFirst().get();
             Object returnResult;
@@ -106,6 +114,7 @@ public class BasePage {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
     }
 }
